@@ -2,7 +2,7 @@
 
 **Does the book use Firebase's Realtime Database or Firebase's Cloud Firestore?**
 
-This book uses Firebase's Realtime Database which comes with a free tier to experiment with Firebase and offers overall a great learning experience. Many tutorials and guides you can find online are targeted at Firebase Realtime Database developers, because the Cloud Firestore is the newer version of it, and not many guides are covering it yet. However, migrating from Firebase's Realtime Database to Cloud Firestore is a straight forward process and will be shown in a tutorial which comes with the course package of this book. After you have learned how to migrate from Realtime Database to Cloud Firestore, you can use all the learnings acquired from older tutorials which are using the Realtime Database for your Firestore application.
+This book uses Firebase's Realtime Database which comes with a free tier to experiment with Firebase and offers overall a great learning experience. Many tutorials and guides you can find online are targeted at Firebase Realtime Database developers, because the Cloud Firestore is the newer version of it, and not many guides are covering it yet. However, migrating from Firebase's Realtime Database to Cloud Firestore is a straight forward process and is shown in [this tutorial](https://www.robinwieruch.de/react-firestore-tutorial). If you want to use Cloud Firestore instead of Firebase's Realtime Database from the get go, you can consult the tutorial to find for a mirgation path. Anyway, after you have learned how to migrate from Realtime Database to Cloud Firestore, you can use all the learnings acquired from older tutorials which are using the Realtime Database for your Firestore application.
 
 **How do I get updates?**
 
