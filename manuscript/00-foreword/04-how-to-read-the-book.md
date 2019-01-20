@@ -1,14 +1,16 @@
 ## How to read this Book
 
+All my books are **not meant** to be comprehensive reference guides or in-depth reads about the technology itself. Instead, they are written as tutorials as you will find them online nowadays. However, most online tutorials are not consistent, often out-of-date, teach too many things at once, and never answer the *why* but only show off the *how*. I do my best to avoid these pitfalls in my books with the experience I gathered over the last years of writing technical content. You will be guided through building applications by typing out the code yourself, running into issues, and fixing them. You will learn about the *why* and not only the *how*. After you have finished this book and the application(s), you should feel comfortable in any source code related to the technology. This book is not only about reading it, but about getting your hands dirty. After all, I hope my books offer you the best practical introduction to a topic that is available as written content.
+
+### State of Flow
+
 I reason that few people have learned to create source code from reading a book, and that programming is about the practical experience of conquering challenges and strengthening your development skills. Paradigms like functional programming and object-oriented programming require more extensive trial and error to use practically. Complex concepts like state management or control flow management used in modern web applications, libraries, and frameworks will take more than a weekend to master. These concepts can only be learned through consistent practice.
 
-### Flow
-
-This book provides a more hands-on experience and challenges to help you grow as a software engineer. The challenges are meant to create a flow experience, a scenario where obstackes are met by your skills and tools. The idea is to keep the balance of challenging you and respecting your skill level so you can experience a [state of flow](https://www.robinwieruch.de/lessons-learned-deep-work-flow/).
+This book provides a more hands-on experience and challenges to help you grow as a software engineer. The challenges are meant to create a flow experience, a scenario where obstacles are met by your skills and tools. The idea is to keep the balance of challenging you and respecting your skill level so you can experience a [state of flow](https://www.robinwieruch.de/lessons-learned-deep-work-flow/).
 
 ### Exercises
 
-As mentioned, there are practical tasks in this book presented as exercises to fortify what you learned in the previous section. The tasks will include practical uses for the lessons, and deeper understanding of abstract content for your own projects.
+As mentioned, there are practical tasks in this book presented as exercises to fortify what you learned in previous sections. The tasks will include practical uses for the lessons, and deeper understanding of abstract content for your own projects. Most of the exercises come with the entire source code you have coded until then as well. Use this source code to track down bugs in case you ran into an issue in one of the sections.
 
 ### Stepping Stones
 
