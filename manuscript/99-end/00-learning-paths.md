@@ -1,10 +1,10 @@
 # Learning Paths
 
-The last chapters of this book are to help yoy apply what you've learned. So far, the book has taught you how to use Firebase in React to build sophisticated web applications. You've used all the fundamental features that power modern applications. Firebase offers you everything you need to implement authentication, authorization, and database interaction. However, there is plenty of room to explore the ecosystem, starting with this book's exercises and articles.
+The last chapters of this book are to help you apply what you've learned. So far, the book has taught you how to use Firebase in React to build sophisticated web applications. You've used all the fundamental features that power modern applications. Firebase offers you everything you need to implement authentication, authorization, and database interaction. However, there is plenty of room to explore the ecosystem, starting with this book's exercises and articles.
 
 ## Firebase's Cloud Firestore
 
-Firebase's Cloud Firestore is the latest version of Firebase's Realtime Database. We used the database because it comes with plenty of documentation, has a more established community, and offers plenty of online tutorials. However, Firebase's Cloud Firestore migh still take over at some point, because it has a more intuitive data model, more features, faster queries, and a better scaling experience for larger applications. Since it only affects the Firebase database, everything else like the Firebase authentication mechanisms stays the same. You only need to [migrate to Cloud Firestore](https://www.robinwieruch.de/react-firestore-tutorial) to give it a shot.
+Firebase's Cloud Firestore is the latest version of Firebase's Realtime Database. We used Realtime Database because it comes with plenty of documentation, has a more established community, and offers a lot of online tutorials. However, Firebase's Cloud Firestore might take over at some point, because it has a more intuitive data model, more features, faster queries, and a better scaling experience for larger applications. Since it only affects the Firebase database, everything else like the Firebase authentication mechanisms stays the same. You only need to [migrate to Cloud Firestore](https://www.robinwieruch.de/react-firestore-tutorial) to give it a shot.
 
 ## Firebase's Admin API
 
@@ -12,7 +12,7 @@ We used Firebase's authentication and realtime database in this book. Conversely
 
 ## Firebase's Storage API
 
-Users who have signed in to your application already come with an avatar, because they often use an image of themselves on Google, Facebook or Twitter. With Firebase's storage API, you can allow them to upload personalized imagery, like profile pictures.
+Firebase enables you to store files as well. For instance, users who have signed in to your application with a social login already come with an avatar, because they often use an image of themselves on Google, Facebook or Twitter. With Firebase's storage API, you can allow them to upload personalized profile pictures. It's may be also helpful for users who sign up with a email/password combination, because they will not have a profile picture in the first place. Give your users an option to upload images and explore the Firebase Storage API.
 
 ## Firebase's Cloud Functions
 
@@ -20,8 +20,8 @@ Firebase's Cloud Functions are another advanced tool to outsource business logic
 
 ## Stripe and PayPal
 
-You can also enable payments for your Firebase in React application to make it a full-fledged business application. [Stripe](https://w ww.robinwieruch.de/react-express-stripe-payment/) and [PayPal](https://www.robinwieruch.de/react-paypal-payment/) are two platforms that add [monetezation](https://en.wikipedia.org/wiki/Monetization), for actions like charging users a one-time or adding subscriptions. This is the next step in building a profitable online service.
+You can also enable payments for your Firebase in React application to make it a full-fledged business application. [Stripe](https://www.robinwieruch.de/react-express-stripe-payment/) and [PayPal](https://www.robinwieruch.de/react-paypal-payment/) are two platforms that add monetization, for actions like charging users a one-time fee or adding recurring subscriptions. This is the next step in building a profitable online service.
 
 ## Keep Tinkering
 
-The foremost recommendation I have is to continue tinkering with React with Firebase applications you build in this book. Try substituting technologies used under the hood to see what happens, while still keeping focus on your application's main features. Since React and Firebase have many user management built-in, you can concentrate on expanding their options. If you want to substitute Firebase with your own database and authentication, my other book The Road to GraphQL shows how too add these same features with your own backend application.
+The foremost recommendation I have is to continue tinkering with the React with Firebase application that you built in this book; as it's an ideal starter kit to realize your own ideas. As mentioned, you are free to substitute the technologies used under the hood, but maybe just focus on the features of your application. Since the user management is implemented for you, you can start to add your own features from there. If you want to substitute Firebase with your own database and authentication, my other book The Road to GraphQL shows how too add these same features with your own backend application.
