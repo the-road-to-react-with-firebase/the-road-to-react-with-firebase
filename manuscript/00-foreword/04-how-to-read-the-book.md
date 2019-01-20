@@ -23,3 +23,13 @@ I encourage you to write out code examples instead of copying and pasting them. 
 ### Learn your Tools
 
 These materials should be absorbed with an IDE or editor/terminal combination to type out the examples and observe the output. I provide additional tools that will support you with the implementation. Between the lessons, experiment with your applications and apply the tools you've acquired. After all, application is the only way to mastery.
+
+### Challenge
+
+I write a lot about lessons I've learned, because learning and teaching has helped me a lot in my career. Continuing the cycle of teaching and learning is what we call progress. My challenge for you is to teach others while you are learning a new technology with this book:
+
+* Write a blog about a topic from this book. Try not to copy and paste, but teach your own way to gain the most from the passage of information. Find your own words to explain the concepts, solve problems, and dive into every detail of each topic. Teach not only fills your knowledge gaps, it can open doors for your long-term career plans.
+
+* If you're active on social media, consider sharing tricks you've learned in this book with friends. You can tweet tips about your latest interesting experiment, or show off your skills in web development Facebook groups or Reddit communities. Just be sure to take quality screenshots of your progress so viewers can follow along.
+
+* Consider sharing videos while reading the book on Facebook Live, YouTube, or Twitch. Even if people don't follow your live sessions, you can always post the recording on YouTube afterward to maximize its exposure. Creating videos is also an effective way to verbalize your problem-solving process. If parts between recordings are taking longer, cut the video or use timelapse to show the highlights. Also, consider keeping bugs and mishaps in the videos, as these can be valuable learning tools for viewers who run into the same issues.
