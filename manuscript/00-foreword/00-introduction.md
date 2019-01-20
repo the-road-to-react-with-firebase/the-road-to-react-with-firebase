@@ -1,7 +1,6 @@
 # Introduction
 
-
-Modern web applications are often bloated and complex when they're implemented as full-blown client-server architectures. There are usually a fontend and backend applications, a database, and an interface that lets both ends communicate. In my other books I teach about React.js for frontend applications, Node.js for backend applications with databases, and GraphQL or REST for the communication between them. Doing all of this yourself can be a lengthy endeavor, though, so if you're looking for a stop-gap solution, Firebase offers features like database connectivity and authentication by default.
+Modern web applications can turn out huge, bloated, and complex when implementing them as full-blown client-server architectures. Usually you not only have a fontend and a backend application with a database, but also an interface in between to let both entities communicate with each other. In my other books, I teach people about React.js for frontend applications, Node.js for backend applications with databases, and GraphQL or REST for the communication between both entities. Doing all of this by yourself can be a lengthy adventure. If you are looking for a solution in between, where you only serve your users a well-rounded client application experience, Firebase with all its features comes amazingly into play, because it offers you features such as a database and authentication out of the box.
 
 The React with Firebase application we'll build in this book offered a solid foundation for my own business for a long time. It also taught me the fundamentals of databases, authentication, and authorization from a frontend developer's perspective. These are the main reasons I wanted to pass my understanding of React and Firebase along.
 
