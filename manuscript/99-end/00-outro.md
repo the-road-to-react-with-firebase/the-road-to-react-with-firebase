@@ -1,6 +1,18 @@
-# Learning Paths
+# Your journey ahead ...
 
-The last chapters of this book are to help you apply what you've learned. So far, the book has taught you how to use Firebase in React to build sophisticated web applications. You've used all the fundamental features that power modern applications. Firebase offers you everything you need to implement authentication, authorization, and database interaction. However, there is plenty of room to explore the ecosystem, starting with this book's exercises and articles.
+The [Learning Pyramid](https://www.google.com/search?q=learning+pyramid) shows the relation between retention rates and mental activities, proving usable data for both teaching and learning. It is one of the most effective ways to measure lessons I have encountered since I started teaching programming. This is how typical mental activities break down according to retention rates:
+
+* **5% Lecture**
+* **10% Reading**
+* **20% Audiovisual**
+* **30% Demonstration**
+* **50% Discussion**
+* **75% Practice by Doing**
+* **90% Teach Others**
+
+At the start of this book I mentioned that very few people can master programming by reading a book, and throughout I have emphasized applying the lessons as the best way to retain them. As you can see, teaching others has the biggest return on investment. I had the same experience when I started writing about web development, answered questions on Quora, Reddit, Stack Overflow, and wrote books. Teaching others forces you to dive deeper into topics, so you learn about the nuances of programming. Think of friends, coworkers, or online peers who want to learn about your lessons learned from this book. Both mentor and student can grow from the experience.
+
+What's next after you have finished this book? So far, the book has taught you how to use Firebase in React to build modern web applications. You've used all the fundamental features to power your application with authentication, authorization, and database interaction. However, there is plenty of room to explore the ecosystem, starting with this book's exercises and articles.
 
 ## Firebase's Cloud Firestore
 
