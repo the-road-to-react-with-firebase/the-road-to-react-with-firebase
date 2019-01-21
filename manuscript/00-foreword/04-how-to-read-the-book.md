@@ -16,7 +16,7 @@ As mentioned, there are practical tasks in this book presented as exercises to f
 
 Remember to internalize each lesson before you continue with the next section. The lessons build on the one before, and the difficulty of each topic scales horizontally using techniques side-by-side, and vertically using technique-on-technique. Its much easier to retain information if you take notes, so consider writing down questions that aren't covered in the text so you can look them up afterward. These notes can also become feedback, which I use to improve future versions.
 
-### DIY
+### Do It Yourself
 
 I encourage you to write out code examples instead of copying and pasting them. Typing out code teaches how to find syntax errors and bugs, and you'll be better equipped fix errors once you've started trying the examples on your own. Don't get discouraged if you encounter bugs, as they usually appear in any application that is complex enough. It is acceptable to find them in learning scenarios because you'll have a chance to learn how to fix them.
 
