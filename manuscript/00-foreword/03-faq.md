@@ -6,7 +6,7 @@ This book uses Firebase's Realtime Database that comes with a free tier for expe
 
 **How do I get updates?**
 
-I have two channels where I share updates about my content. You can [subscribe to updates by email](https://www.getrevue.co/profile/rwieruch) or [follow me on Twitter](https://twitter.com/rwieruch) to get updates more frequently. Regardless of the channel, my objective is to only share quality content. Once you receive a notification the book has changed, you can download a new version from my [website](https://robinwieruch.de/).
+I have two channels where I share updates about my content. You can [subscribe to updates by email](https://www.getrevue.co/profile/rwieruch) or [follow me on Twitter](https://twitter.com/rwieruch) to get updates more frequently. Regardless of the channel, my objective is to only share quality content. Once you receive a notification the book has changed, you can download a new version from my [website](https://www.robinwieruch.de/).
 
 **How do I gain access to additional material from the course?**
 
