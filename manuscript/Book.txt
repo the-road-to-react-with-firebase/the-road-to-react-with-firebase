@@ -8,6 +8,22 @@
 
 {mainmatter}
 
+01-react-setup/index.md
+02-react-router-setup/index.md
+03-firebase-setup/index.md
+04-react-firebase-setup/index.md
+05-react-firebase-authentication/index.md
+06-password-management/index.md
+07-react-firebase-authorization-1/index.md
+08-react-firebase-database-1/index.md
+09-react-firebase-authorization-2/index.md
+10-firebase-auth-persistence/index.md
+11-social-logins/index.md
+12-email-verification/index.md
+13-admin-dashboard/index.md
+14-react-firebase-database-2/index.md
+15-firebase-hosting/index.md
+
 {backmatter}
 
 99-end/00-outro.md
