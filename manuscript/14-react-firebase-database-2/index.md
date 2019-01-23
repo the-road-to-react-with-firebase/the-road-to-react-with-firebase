@@ -33,7 +33,7 @@ Messages are readable and writeable on two API endpoints: messages and messages/
 
 If you want to be more specific, put more informative class methods for the message API in your Firebase class. For instance, there could be one class method for creating, updating, and removing a message. We will keep it general, however, and perform the specifics in the React components.
 
-## How to fetch a list
+## How to fetch a List
 
 The HomePage component might be the best place to add the chat feature with messages, which is only accessible by authenticated users due to authorization. Let's add a Message component that has access to the Firebase instance:
 
@@ -583,7 +583,7 @@ const MessageList = ({
         message={message}
 # leanpub-start-insert
         onEditMessage={onEditMessage}
-# leanpub-en-insert
+# leanpub-end-insert
         onRemoveMessage={onRemoveMessage}
       />
     ))}
