@@ -42,7 +42,7 @@ const withAuthorization = () => Component => {
 export default withAuthorization;
 ~~~~~~~~
 
-So far, the higher-order component is not doing anything but taking a component a component as input and returning it as output. However, the higher-order component should be able to receive a condition function passed as parameter. You can decide if it should be a broad or fine-grained (role-based, permission-based) authorization rule. Second, it has to decide based on the condition whether it should redirect to a public page (public route), because the user isn't authorized to view the current protected page (protected route). Let's paste the implementation details for the higher-order component and go through it step-by-step:
+So far, the higher-order component is not doing anything but taking a component as input and returning it as output. However, the higher-order component should be able to receive a condition function passed as parameter. You can decide if it should be a broad or fine-grained (role-based, permission-based) authorization rule. Second, it has to decide based on the condition whether it should redirect to a public page (public route), because the user isn't authorized to view the current protected page (protected route). Let's paste the implementation details for the higher-order component and go through it step-by-step:
 
 {title="src/components/Session/withAuthorization.js",lang="javascript"}
 ~~~~~~~~
