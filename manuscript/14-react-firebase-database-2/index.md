@@ -930,7 +930,7 @@ class MessagesBase extends Component {
 }
 ~~~~~~~~
 
-Pass the property that should be used to retrieved the list as ordered list from the Firebase realtime database. By default Firebase is ordering the items in ascending direction. To reverse the order, add a `reverse()` after transforming the the list of messages from an object to an array.
+Pass the property that should be used to retrieved the list as ordered list from the Firebase realtime database. By default Firebase is ordering the items in ascending direction. To reverse the order, add a `reverse()` after transforming the list of messages from an object to an array.
 
 You might see a warning about indexing data in Firebase's realtime database, because we're fetching data in a specific order, and Firebase uses the property `createdAt` to fetch it more efficiently. You can index messages using the `createdAt` property to give Firebase a performance boost when fetching the messages with this ordering. Head over to your project's Firebase dashboard, open the "Database" tab, and click the "Rules" tab. You can add the indexing of the data there:
 
