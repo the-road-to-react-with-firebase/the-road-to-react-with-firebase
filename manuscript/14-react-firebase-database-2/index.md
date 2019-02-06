@@ -721,7 +721,7 @@ class MessageItem extends Component {
 }
 ~~~~~~~~
 
-Nex add "Edit" and "Reset" buttons to toggle between preview and edit mode. Depending on the edit mode, the correct button is displayed, and a "Save" button is shown in edit mode to save the edited text:
+Next add "Edit" and "Reset" buttons to toggle between preview and edit mode. Depending on the edit mode, the correct button is displayed, and a "Save" button is shown in edit mode to save the edited text:
 
 {title="src/components/Home/index.js",lang="javascript"}
 ~~~~~~~~
