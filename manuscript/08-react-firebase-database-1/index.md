@@ -81,7 +81,7 @@ The paths in the `ref()` method match the location where your entities (users) w
 
 * Activate [Firebase's Realtime Database](https://www.robinwieruch.de/firebase-tutorial/) on your Firebase Dashboard
 * Read more about [Firebase's realtime database setup for Web](https://firebase.google.com/docs/database/web/start)
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/7709484f2a79d284d35317fe60c1a06ed74bfc82)
+* Confirm your [source code for the last section](http://bit.ly/2VpDkdW)
 
 ## User Management with Firebase
 
@@ -349,4 +349,4 @@ You have gained full control of your users now. It is possible to create and ret
 ### Exercises:
 
 * Read more about [how to read and write data to Firebase's realtime database](https://firebase.google.com/docs/database/web/read-and-write)
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/a20ec71dad2e21efa8055a469cc7cc68484fef44)
+* Confirm your [source code for the last section](http://bit.ly/2VmRegY)

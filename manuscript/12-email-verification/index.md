@@ -115,7 +115,7 @@ class Firebase {
 
             // default empty roles
             if (!dbUser.roles) {
-              dbUser.roles = [];
+              dbUser.roles = {};
             }
 
             // merge auth and db user
@@ -344,7 +344,6 @@ export {
   withEmailVerification,
 # leanpub-end-insert
 };
-
 ~~~~~~~~
 
 Send a confirmation email once a user signs up with a email/password combination. You also have a higher-order component used for authorization and optionally resending a confirmation email. Next, secure all pages/routes that should be only accessible with a confirmed email. Let's begin with the home page:
@@ -393,7 +392,7 @@ import * as ROLES from '../../constants/roles';
 ...
 
 const condition = authUser =>
-  authUser && authUser.roles.includes(ROLES.ADMIN);
+  authUser && !!authUser.roles[ROLES.ADMIN];
 
 export default compose(
 # leanpub-start-insert
@@ -442,6 +441,8 @@ All the sensible routes for authenticated users now require a confirmed email. F
 
 * Familiarize yourself with the new flow by deleting your user from the Authentication and Realtime Databases and sign up again.
   * For example, sign up with a social login instead of the email/password combination, but activate the email/password sign in method later on the account page.
+  * This is in general a good way to purge the database to start from a clean slate if anything feels buggy.
+* Implement the "Send confirmation E-Mail" button in a way that it's not shown the first time a user signs up; otherwise the user may be tempted to click the button right away and receives a second confirmation E-Mail.
 * Read more about [Firebase's verification E-Mail](https://firebase.google.com/docs/auth/web/manage-users)
 * Read more about [additional configuration for the verification E-Mail](https://firebase.google.com/docs/auth/web/passing-state-in-email-actions)
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/316a1759d4391fc4bf5ea55731608c8c227f24a8)
+* Confirm your [source code for the last section](http://bit.ly/2Vqtfxt)

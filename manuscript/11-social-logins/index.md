@@ -186,7 +186,7 @@ class SignInGoogleBase extends Component {
           .set({
             username: socialAuthUser.user.displayName,
             email: socialAuthUser.user.email,
-            roles: [],
+            roles: {},
           });
       })
 # leanpub-end-insert
@@ -213,7 +213,7 @@ In this scenario, every time a user signs in with Google, a new user with this s
 
 * Read more about the [Google Social Login](https://firebase.google.com/docs/auth/web/google-signin)
 * Check your Firebase's Dashboard Authentication/Database tabs to manage your users (e.g. manually remove users).
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/2b28b831a7cd9b6ef5d4c5808a886ace159f3d2e)
+* Confirm your [source code for the last section](http://bit.ly/2VuH8eh)
 
 ## Facebook Social Login
 
@@ -372,7 +372,7 @@ class SignInFacebookBase extends Component {
           .set({
             username: socialAuthUser.additionalUserInfo.profile.name,
             email: socialAuthUser.additionalUserInfo.profile.email,
-            roles: [],
+            roles: {},
           });
       })
 # leanpub-end-insert
@@ -400,7 +400,7 @@ Again, every time a user signs in with Facebook, a new user with this stable id 
 * Read more about the [Facebook Social Login](https://firebase.google.com/docs/auth/web/facebook-login)
 * Figure out whether there is a way to interact with Facebook's API afterward, because the `socialUser` has an `accessToken` in its `credentials` object.
 * Like my [Facebook](https://www.facebook.com/rwieruch/) page to receive latest tutorials for web developers.
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/2b28b831a7cd9b6ef5d4c5808a886ace159f3d2e)
+* Confirm your [source code for the last section](http://bit.ly/2VuH8eh)
 
 ## Twitter Social Login
 
@@ -560,7 +560,7 @@ class SignInTwitterBase extends Component {
           .set({
             username: socialAuthUser.additionalUserInfo.profile.name,
             email: socialAuthUser.additionalUserInfo.profile.email,
-            roles: [],
+            roles: {},
           });
       })
 # leanpub-end-insert
@@ -588,7 +588,7 @@ Again, every time a user signs in with Twitter, a new user with this stable id c
 * Read more about the [Twitter Social Login](https://firebase.google.com/docs/auth/web/twitter-login)
 * Figure out whether there is a way to interact with Twitter's API afterward, because the `socialUser` has an `accessToken` and `secret` in its `credentials` object.
 * Follow my [Twitter](https://twitter.com/rwieruch) page to receive latest tutorials for web developers.
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/2b28b831a7cd9b6ef5d4c5808a886ace159f3d2e)
+* Confirm your [source code for the last section](http://bit.ly/2VuH8eh)
 
 ## Linking Social Logins to one Account
 
@@ -688,10 +688,10 @@ class SignUpFormBase extends Component {
 
   onSubmit = event => {
     const { username, email, passwordOne, isAdmin } = this.state;
-    const roles = [];
+    const roles = {};
 
     if (isAdmin) {
-      roles.push(ROLES.ADMIN);
+      roles[ROLES.ADMIN] = ROLES.ADMIN;
     }
 
     this.props.firebase
@@ -1274,4 +1274,4 @@ Now you can link and unlink different sign-in methods using only one account and
 * Try to link and unlink different sign-in methods and check if you are able to sign-in with this method afterwards.
 * Implement loading indicators for each button that activate and deactivate the sign-in methods for a better user experience.
 * Read more about [social account linking in Firebase](https://firebase.google.com/docs/auth/web/account-linking)
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/f3d2ec472754604c7740dbdc7a1e5bf792d787f4)
+* Confirm your [source code for the last section](http://bit.ly/2VnF3Rf)

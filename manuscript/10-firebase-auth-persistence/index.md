@@ -128,4 +128,4 @@ Try the application again and verify that the flicker is gone. Also all the cond
 
 * Read more about [Auth Persistence in Firebase](https://firebase.google.com/docs/auth/web/auth-state-persistence)
 * Explore using the Browser's Session Storage instead of the Local Storage to give the authenticated user an expiration date.
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/b47b884f87e804a3191c6aeee450d6236357c320)
+* Confirm your [source code for the last section](http://bit.ly/2VoNhZj)

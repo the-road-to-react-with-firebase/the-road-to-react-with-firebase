@@ -225,4 +225,4 @@ The Account page doesn't have any business logic. It uses the password forget an
 ### Exercises:
 
 * Consider ways to protect the Account page and make it accessible only for authenticated users.
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/a644850ef10121c5c97e4dd2dc22c62101b9f8b0)
+* Confirm your [source code for the last section](http://bit.ly/2VqWgt4)

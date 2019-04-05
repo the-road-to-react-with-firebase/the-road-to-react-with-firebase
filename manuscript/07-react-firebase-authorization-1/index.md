@@ -276,7 +276,7 @@ const AdminPage = () => (
 );
 
 const condition = authUser =>
-  authUser && authUser.roles.includes(ROLES.ADMIN);
+  authUser && !!authUser.roles[ROLES.ADMIN];
 
 export default withAuthorization(condition)(AdminPage);
 ~~~~~~~~
@@ -286,4 +286,4 @@ Don't worry about this yet, because we'll implement a role-based authorization f
 ### Exercises:
 
 * Research yourself how a role-based or permission-based authorization could be implemented.
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/94bb3a92970d4159564eb01bcfd24bcc0f8c4348)
+* Confirm your [source code for the last section](http://bit.ly/2Vop4SL)

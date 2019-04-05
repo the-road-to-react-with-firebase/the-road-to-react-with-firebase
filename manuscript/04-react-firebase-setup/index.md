@@ -81,4 +81,4 @@ Firebase and React are now connected, the fundamental step to make the layers co
 ### Exercises:
 
 * Read more about [React's Context API](https://www.robinwieruch.de/react-context-api/)
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/34d1887ecee83af0b3d2a51f4a7c78a55e2dabba)
+* Confirm your [source code for the last section](http://bit.ly/2VrUms0)

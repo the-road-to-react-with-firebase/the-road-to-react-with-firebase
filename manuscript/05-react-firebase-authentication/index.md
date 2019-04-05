@@ -172,7 +172,7 @@ That's the authentication interface for your React components that will connect 
 ### Exercises:
 
 * Read more about [Firebase Authentication for Web](https://firebase.google.com/docs/auth/web/start)
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/ad71eae018fa27202fd1a42da0e624805068800e)
+* Confirm your [source code for the last section](http://bit.ly/2VpQ1pk)
 
 ## Sign Up with React and Firebase
 
@@ -628,7 +628,7 @@ Run your application again. If you signed up a user successfully, it should redi
 * Read more about [data fetching in React](https://www.robinwieruch.de/react-fetching-data/)
 * Read more about [higher-order components in React](https://www.robinwieruch.de/gentle-introduction-higher-order-components/)
 * Read more about [render prop components in React](https://www.robinwieruch.de/react-render-props-pattern/)
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/d5d2ba5c7a0c554ac8ac1add51c7c2c8313dcf48)
+* Confirm your [source code for the last section](http://bit.ly/2VkrTEA)
 
 ## Sign In with React and Firebase
 
@@ -732,7 +732,7 @@ It is almost the same as the sign up form. Its input fields capture all the nece
 
 * Familiarize yourself with the SignIn and SignInForm components.
   * If they are mysterious to you, checkout the previous section with the implementation of the SignUpForm again
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/commit/6cbccce21952e10472504fc6ef3d37af2c998bb6)
+* Confirm your [source code for the last section](http://bit.ly/2VnEzup)
 
 ## Sign Out with React and Firebase
 
@@ -800,7 +800,7 @@ Regarding components, everything is set to fulfil a full authentication roundtri
 ### Exercises:
 
 * Read more about [Firebase Authentication with E-Mail/Password](https://firebase.google.com/docs/auth/web/password-auth)
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/5cef7624455f585df4af38f6e04b6d418d82a388)
+* Confirm your [source code for the last section](http://bit.ly/2VpQ9oO)
 
 ## Session Handling
 
@@ -987,7 +987,7 @@ Congratulations, you have successfully implemented the authentication process wi
 ### Exercises:
 
 * Read more about [Firebase's Authenticated User](https://firebase.google.com/docs/auth/web/manage-users)
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/8fa558878fa5c7e7bbb905c0c12b592cbfd69e3d)
+* Confirm your [source code for the last section](http://bit.ly/2VrULL2)
 
 ## Session Handling with Higher-Order Components
 
@@ -1224,4 +1224,4 @@ Start the application and verify that it still works. You didn't change any beha
 ### Exercises:
 
 * Check again your Firebase Context and higher-order component implementation in the *src/components/Firebase* module, which is quite similar to what you have done in this section.
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/b329f6e5fb4a388e131fe1c26f0a6fdcc3fd2e83)
+* Confirm your [source code for the last section](http://bit.ly/2VjYz0R)
