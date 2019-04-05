@@ -165,4 +165,4 @@ Previously, you created basic components for each page component used by our rou
 ### Exercises:
 
 * Learn more about [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/d2a043d176fd840cf247cf83b3c13f8f9bf61500)
+* Confirm your [source code for the last section](http://bit.ly/2VmQnNi)

@@ -167,4 +167,4 @@ Whether you used environment variables, defined the configuration inline, used o
 
 * Read more about the [Firebase Setup for Web Applications](https://firebase.google.com/docs/web/setup)
 * Read more about [Firebase's Pricing Plans](https://firebase.google.com/pricing/) to know better about the limitations of the free plan.
-* Confirm your [source code for the last section](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication/tree/65e6c18fb894b847fed0ab6f9bb042b310cfedc2)
+* Confirm your [source code for the last section](http://bit.ly/2VqqWKP)
