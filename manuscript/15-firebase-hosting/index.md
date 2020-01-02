@@ -53,8 +53,8 @@ You can create multiple project aliases by running firebase use --add,
 but for now we'll just set up a default project.
 
 ? Select a default Firebase project for this directory:
--> react-firebase-authentic-d12f8 (react-firebase-authentication)
-i  Using project react-firebase-authentic-d12f8 (react-firebase-authentication)
+-> my-react-project-abc123 (my-react-project)
+i  Using project my-react-project-abc123 (my-react-project)
 ~~~~~~~~
 
 There are a few other configuration steps to define. Instead of using the default *public/* folder, we want to use the *build/* folder for create-react-app. If you set up the bundling with a tool like Webpack, you can choose the appropriate name for the build folder:
@@ -79,8 +79,8 @@ After a successful deployment, you should see a similar output with your project
 
 {title="Command Line",lang="json"}
 ~~~~~~~~
-Project Console: https://console.firebase.google.com/project/react-firebase-authentic-d12f8/overview
-Hosting URL: https://react-firebase-authentic-d12f8.firebaseapp.com
+Project Console: https://console.firebase.google.com/project/my-react-project-abc123/overview
+Hosting URL: https://my-react-project-abc123.firebaseapp.com
 ~~~~~~~~
 
 Visit both pages to observe the results. The former link navigates to your Firebase project's dashboard. There, you should have a new panel for the Firebase Hosting. The latter link navigates to your deployed React application.
@@ -90,6 +90,5 @@ If you only see a blank page for your deployed React application, see if the `pu
 ### Exercises
 
 * Add the [security rules from the installation instructions](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication) to your Firebase Project's Dashboard for your Database.
-* Read more about [Firebase Hosting Features](https://firebase.google.com/docs/hosting/)
-* Read more about [how to host with Firebase Hosting](https://firebase.google.com/docs/hosting/quickstart)
-* [Connect your domain to your Firebase deployed application](https://firebase.google.com/docs/hosting/custom-domain)
+* Read more about [Firebase Hosting](https://firebase.google.com/docs/hosting/).
+* [Connect your domain to your Firebase deployed application](https://firebase.google.com/docs/hosting/custom-domain).
