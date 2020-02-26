@@ -11,12 +11,12 @@ For the development environment, use a running editor/terminal (command line too
 You will need to have [node and npm](https://nodejs.org/en/) installed, which are used to run the applications we'll build and manage the libraries we'll use along the way. In this book, you will install external node packages via npm (node package manager). These node packages can be libraries or whole frameworks. You can verify which node and npm versions you have in the command line:
 
 {title="Command Line",lang="text"}
-~~~~~~~~
+~~~~~~~
 node --version
 *v10.11.0
 npm --version
 *v6.5.0
-~~~~~~~~
+~~~~~~~
 
 These are the versions used for this publication. If you don't see output in your terminal, you will need to install node and npm.
 

@@ -9,7 +9,7 @@ First, we need to activate one of the available authentication providers on Fire
 Second, we will implement the authentication API for our Firebase class. Import and instantiate the package from Firebase responsible for all the authentication in your *src/components/Firebase/firebase.js* file:
 
 {title="src/components/Firebase/firebase.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import app from 'firebase/app';
 # leanpub-start-insert
 import 'firebase/auth';
@@ -35,12 +35,12 @@ class Firebase {
 }
 
 export default Firebase;
-~~~~~~~~
+~~~~~~~
 
 Let's define all the authentication functions as class methods step by step. They will serve our communication channel from the Firebase class to the Firebase API. First, the sign up function (registration) takes email and password parameters for its function signature and uses an official Firebase API endpoint to create a user:
 
 {title="src/components/Firebase/firebase.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import app from 'firebase/app';
 import 'firebase/auth';
 
@@ -64,12 +64,12 @@ class Firebase {
 }
 
 export default Firebase;
-~~~~~~~~
+~~~~~~~
 
 We'll also set up the login/sign-in function, which takes email and password parameters, as well:
 
 {title="src/components/Firebase/firebase.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import app from 'firebase/app';
 import 'firebase/auth';
 
@@ -94,12 +94,12 @@ class Firebase {
 }
 
 export default Firebase;
-~~~~~~~~
+~~~~~~~
 
 These endpoints are called asynchronously, and they will need to be resolved later, as well as error handling. For instance, it is not possible to sign in a user who is not signed up yet since the Firebase API would return an error. In case of the sign out function, you don't need to pass any argument to it, because Firebase knows about the currently authenticated user. If no user is authenticated, nothing will happen when this function is called.
 
 {title="src/components/Firebase/firebase.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import app from 'firebase/app';
 import 'firebase/auth';
 
@@ -126,12 +126,12 @@ class Firebase {
 }
 
 export default Firebase;
-~~~~~~~~
+~~~~~~~
 
 There are two more authentication methods to reset and change a password for an authenticated user:
 
 {title="src/components/Firebase/firebase.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import app from 'firebase/app';
 import 'firebase/auth';
 
@@ -165,7 +165,7 @@ class Firebase {
 }
 
 export default Firebase;
-~~~~~~~~
+~~~~~~~
 
 That's the authentication interface for your React components that will connect to the Firebase API. In the next section, we will consume all the methods of your Firebase class in your React components.
 
@@ -181,7 +181,7 @@ We set up all the routes for your application, configured Firebase and implement
 Let's start with the sign up page (registration page). It consists of the page, a form, and a link. The form is used to sign up a new user to your application with username, email, and password. The link will be used on the sign in page (login page) later if a user has no account yet. It is a redirect to the sign up page, but not used on the sign up page itself. Implement the *src/components/SignUp/index.js* file the following way:
 
 {title="src/components/SignUp/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -225,14 +225,14 @@ const SignUpLink = () => (
 export default SignUpPage;
 
 export { SignUpForm, SignUpLink };
-~~~~~~~~
+~~~~~~~
 
 The SignUpForm component is the only React class component in this file, because it has to manage the form state in React's local state. There are two pieces missing in the current SignUpForm component: the form content in the render method in terms of input fields to capture the information (email address, password, etc.) of a user and the implementation of the `onSubmit` class method when a user signs up eventually.
 
 First, let's initialize the state of the component. It will capture the user information such as username, email, and password. There will be a second password field/state for a password confirmation. In addition, there is an error state to capture an error object in case of the sign up request to the Firebase API fails. The state is initialized by an object destructuring. This way, we can use the initial state object to reset the state after a successful sign up.
 
 {title="src/components/SignUp/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 ...
 
 # leanpub-start-insert
@@ -259,12 +259,12 @@ class SignUpForm extends Component {
 }
 
 ...
-~~~~~~~~
+~~~~~~~
 
 Let's implement all the input fields to capture the information in the render method of the component. The input fields need to update the local state of the component by using a `onChange` handler.
 
 {title="src/components/SignUp/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 ...
 
 class SignUpForm extends Component {
@@ -329,7 +329,7 @@ class SignUpForm extends Component {
 }
 
 ...
-~~~~~~~~
+~~~~~~~
 
 Let's take the last implemented code block apart. All the input fields implement the unidirectional data flow of React; thus, each input field gets a value from the local state and updates the value in the local state with a `onChange` handler. The input fields are controlled by the local state of the component and don't control their own states. [They are controlled components](https://www.robinwieruch.de/react-controlled-components/).
 
@@ -338,7 +338,7 @@ In the last part of the form, there is an optional error message from an error o
 One piece in the form is missing: validation. Let's use an `isInvalid` boolean to enable or disable the submit button.
 
 {title="src/components/SignUp/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 ...
 
 class SignUpForm extends Component {
@@ -379,7 +379,7 @@ class SignUpForm extends Component {
 }
 
 ...
-~~~~~~~~
+~~~~~~~
 
 The user is only allowed to sign up if both passwords are the same, and if the username, email and at least one password are filled with a string. This is password confirmation in a common sign up process.
 
@@ -388,7 +388,7 @@ You should be able to visit the */signup* route in your browser after starting y
 What's missing in the component is the `onSubmit()` class method, which will pass all the form data to the Firebase authentication API via your authentication interface in the Firebase class:
 
 {title="src/components/SignUp/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 ...
 
 class SignUpForm extends Component {
@@ -416,7 +416,7 @@ class SignUpForm extends Component {
 }
 
 ...
-~~~~~~~~
+~~~~~~~
 
 The code is not working yet, but let's break down what we have so far. All the necessary information passed to the authentication API can be destructured from the local state. You will only need one password property, because both password strings should be the same after the validation.
 
@@ -429,7 +429,7 @@ Also, the `preventDefault()` method on the event prevents a reload of the browse
 You may have also noticed that one essential piece is missing: We didn't make the Firebase instance available in the SignUpForm [component's props](https://www.robinwieruch.de/react-pass-props-to-component/) yet. Let's change this by utilizing our Firebase Context in the SignUpPage component, and by passing the Firebase instance to the SignUpForm.
 
 {title="src/components/SignUp/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -456,12 +456,12 @@ class SignUpForm extends Component {
 }
 
 ...
-~~~~~~~~
+~~~~~~~
 
 Now the registration of a new user should work. However, I'd like to make one improvement on how we access the Firebase instance here. Rather than using a [render prop component](https://www.robinwieruch.de/react-render-props-pattern/), which is automatically given with React's Context Consumer component, it may be simpler to use a [higher-order component](https://www.robinwieruch.de/gentle-introduction-higher-order-components/). Let's implement this higher-order component:
 
 {title="src/components/Firebase/context.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 
 const FirebaseContext = React.createContext(null);
@@ -475,12 +475,12 @@ export const withFirebase = Component => props => (
 # leanpub-end-insert
 
 export default FirebaseContext;
-~~~~~~~~
+~~~~~~~
 
 Next, make it available via our Firebase module in the *src/components/Firebase/index.js* file:
 
 {title="src/components/Firebase/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 # leanpub-start-insert
 import FirebaseContext, { withFirebase } from './context';
 # leanpub-end-insert
@@ -491,12 +491,12 @@ export default Firebase;
 # leanpub-start-insert
 export { FirebaseContext, withFirebase };
 # leanpub-end-insert
-~~~~~~~~
+~~~~~~~
 
 Now, instead of using the Firebase Context directly in the SignUpPage, which doesn't need to know about the Firebase instance, use the higher-order component to wrap your SignUpForm. Afterward, the SignUpForm has access to the Firebase instance via the higher-order component. It's also possible to use the SignUpForm as standalone without the SignUpPage, because it is responsible to get the Firebase instance via the higher-order component.
 
 {title="src/components/SignUp/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -531,12 +531,12 @@ const SignUpForm = withFirebase(SignUpFormBase);
 export default SignUpPage;
 
 export { SignUpForm, SignUpLink };
-~~~~~~~~
+~~~~~~~
 
 When a user signs up to your application, you want to redirect the user to another page. It could be the user's home page, a protected route for only authenticated users. You will need the help of React Router to redirect the user after a successful sign up.
 
 {title="src/components/SignUp/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React, { Component } from 'react';
 # leanpub-start-insert
 import { Link, withRouter } from 'react-router-dom';
@@ -581,7 +581,7 @@ const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 export default SignUpPage;
 
 export { SignUpForm, SignUpLink };
-~~~~~~~~
+~~~~~~~
 
 Let's take the previous code block apart again. To redirect a user to another page programmatically, we need access to React Router to redirect the user to another page. Fortunately, the React Router node package offers a higher-order component to make the router properties accessible in the props of a component. Any component that goes in the `withRouter()` higher-order component gains access to all the properties of the router, so when passing the enhanced SignUpFormBase component to the `withRouter()` higher-order component, it has access to the props of the router. The relevant property from the router props is the `history` object, because it allows us to redirect a user to another page by pushing a route to it.
 
@@ -590,14 +590,14 @@ The history object of the router can be used in the `onSubmit()` class method ev
 There is one improvement that we can make for the higher-order components used for the SignUpForm. Nesting functions (higher-order components) into each other like we did before can become verbose. A better way is to compose the higher-order components instead. To do this, install [recompose](https://github.com/acdlite/recompose) for your application on the command line:
 
 {title="Command Line",lang="json"}
-~~~~~~~~
+~~~~~~~
 npm install recompose
-~~~~~~~~
+~~~~~~~
 
 You can use recompose to organize your higher-order components. Since the higher-order components don't depend on each other, the order doesn't matter. Otherwise, it may be good to know that the compose function applies the higher-order components from right to left.
 
 {title="src/components/SignUp/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 # leanpub-start-insert
@@ -619,7 +619,7 @@ const SignUpForm = compose(
 export default SignUpPage;
 
 export { SignUpForm, SignUpLink };
-~~~~~~~~
+~~~~~~~
 
 Run your application again. If you signed up a user successfully, it should redirect to the home page. If the sign up fails, you should see an error message. Try to sign up a user with the same email address twice and verify that a similar error message shows up: "The email address is already in use by another account.". Congratulations, you signed up your first user via Firebase authentication.
 
@@ -635,7 +635,7 @@ Run your application again. If you signed up a user successfully, it should redi
 A sign up automatically results in a sign in/login by the user. We cannot rely on this mechanic, however, since a user could be signed up but not signed in. Let's implement the login with Firebase now. It is similar to the sign up mechanism and components, so this time we won't split it into so many code blocks:
 
 {title="src/components/SignIn/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
@@ -724,7 +724,7 @@ const SignInForm = compose(
 export default SignInPage;
 
 export { SignInForm };
-~~~~~~~~
+~~~~~~~
 
 It is almost the same as the sign up form. Its input fields capture all the necessary information like username and password. A validation step makes sure the email and password are set before performing the request by enabling or disabling the submit button. The authentication API is used again, this time with a function to sign in the user rather than sign them up. If sign in succeeds, the local state is updated with the initial state and the user is redirected again. If the sign in fails, an error object is stored in the local state and an error message appears. The SignUpLink, which was defined earlier in the SignUp module, is used on the sign in page. It lets users sign up if they don't have an account, and it is found on the sign in page.
 
@@ -739,7 +739,7 @@ It is almost the same as the sign up form. Its input fields capture all the nece
 To complete the authentication loop, next we'll implement the sign out component. The component is just a button that appears within the Navigation component. Since we can use the previously-defined authentication API to sign out a user, passing functionality to a button in a React component is fairly straightforward.
 
 {title="src/components/SignOut/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 
 import { withFirebase } from '../Firebase';
@@ -751,12 +751,12 @@ const SignOutButton = ({ firebase }) => (
 );
 
 export default withFirebase(SignOutButton);
-~~~~~~~~
+~~~~~~~
 
 The SignOutButton has access to the Firebase instance using the higher-order component again. Now, use the SignOutButton in the Navigation component:
 
 {title="src/components/Navigation/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -793,7 +793,7 @@ const Navigation = () => (
 );
 
 export default Navigation;
-~~~~~~~~
+~~~~~~~
 
 Regarding components, everything is set to fulfil a full authentication roundtrip. Users can sign up (register), sign in (login), and sign out (logout).
 
@@ -811,7 +811,7 @@ Since our application is made under the umbrella of App component, it's sufficie
 We handle session handling in the App component in the *src/components/App/index.js* file. Because the component handles local state now, you have to refactor it to a class component. It manages the local state of a `authUser` object, and then passes it to the Navigation component.
 
 {title="src/components/App/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 # leanpub-start-insert
 import React, { Component } from 'react';
 # leanpub-end-insert
@@ -852,12 +852,12 @@ class App extends Component {
 # leanpub-end-insert
 
 export default App;
-~~~~~~~~
+~~~~~~~
 
 The Navigation component can be made aware of authenticated user to display different options. It should either show the available links for an authenticated user or a non authenticated user.
 
 {title="src/components/Navigation/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -903,12 +903,12 @@ const NavigationNonAuth = () => (
 # leanpub-end-insert
 
 export default Navigation;
-~~~~~~~~
+~~~~~~~
 
 Let's see where the `authUser` (authenticated user) comes from in the App component. Firebase offers a listener function to get the authenticated user from Firebase:
 
 {title="src/components/App/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 ...
 
 import * as ROUTES from '../constants/routes';
@@ -942,14 +942,14 @@ class App extends Component {
 # leanpub-start-insert
 export default withFirebase(App);
 # leanpub-end-insert
-~~~~~~~~
+~~~~~~~
 
 The helper function `onAuthStateChanged()` receives a function as parameter that has access to the authenticated user. Also, the passed function is called every time something changes for the authenticated user. It is called when a user signs up, signs in, and signs out. If a user signs out, the `authUser` object becomes null, so the `authUser` property in the local state is set to null and all components depending on it adjust their behavior (e.g. display different options like the Navigation component).
 
 We also want to avoid memory leaks that lead to [performance issues](https://www.robinwieruch.de/react-warning-cant-call-setstate-on-an-unmounted-component/), so we'll remove the listener if the component unmounts.
 
 {title="src/components/App/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 ...
 
 class App extends Component {
@@ -978,7 +978,7 @@ class App extends Component {
 }
 
 export default withFirebase(App);
-~~~~~~~~
+~~~~~~~
 
 Start your application and verify that your sign up, sign in, and sign out functionality works, and that the Navigation component displays the options depending on the session state (authenticated user).
 
@@ -994,27 +994,27 @@ Congratulations, you have successfully implemented the authentication process wi
 We added a basic version of session handling in the last section. However,  the authenticated user still needs to be passed down from the App component to interested parties. That can become tedious over time, because the authenticated user has to be passed through all components until it reaches all the leaf components. You used the React Context API to pass down the Firebase instance to any component before. Here, you will do the same for the authenticated user. In a new *src/components/Session/context.js* file, place the following new React Context for the session (authenticated user):
 
 {title="src/components/Session/context.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 
 const AuthUserContext = React.createContext(null);
 
 export default AuthUserContext;
-~~~~~~~~
+~~~~~~~
 
 Next, import and export it from the *src/components/Session/index.js* file that is the entry point to this module:
 
 {title="src/components/Session/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import AuthUserContext from './context';
 
 export { AuthUserContext };
-~~~~~~~~
+~~~~~~~
 
 The App component can use the new context to provide the authenticated user to components that are interested in it:
 
 {title="src/components/App/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 ...
 
 # leanpub-start-insert
@@ -1048,12 +1048,12 @@ class App extends Component {
 }
 
 export default withFirebase(App);
-~~~~~~~~
+~~~~~~~
 
 The `authUser` doesn't need to be passed to the Navigation component anymore. Instead, the Navigation component uses the new context to consume the authenticated user:
 
 {title="src/components/Navigation/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 ...
 
 # leanpub-start-insert
@@ -1073,12 +1073,12 @@ const Navigation = () => (
 # leanpub-end-insert
   </div>
 );
-~~~~~~~~
+~~~~~~~
 
 The application works the same as before, except any component can simply use React's Context to consume the authenticated user. To keep the App component clean and concise, I like to extract the session handling for the authenticated user to a separate higher-order component in a new *src/components/Session/withAuthentication.js* file:
 
 {title="src/components/Session/withAuthentication.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 
 const withAuthentication = Component => {
@@ -1092,12 +1092,12 @@ const withAuthentication = Component => {
 };
 
 export default withAuthentication;
-~~~~~~~~
+~~~~~~~
 
 Move all logic that deals with the authenticated user from the App component to it:
 
 {title="src/components/Session/withAuthentication.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 
 # leanpub-start-insert
@@ -1150,12 +1150,12 @@ const withAuthentication = Component => {
 };
 
 export default withAuthentication;
-~~~~~~~~
+~~~~~~~
 
 As you can see, it also uses the new React Context to provide the authenticated user. The App component will not be in charge of it anymore. Next, export the higher-order component from the *src/components/Session/index.js* file, so that it can be used in the App component after:
 
 {title="src/components/Session/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import AuthUserContext from './context';
 # leanpub-start-insert
 import withAuthentication from './withAuthentication';
@@ -1164,12 +1164,12 @@ import withAuthentication from './withAuthentication';
 # leanpub-start-insert
 export { AuthUserContext, withAuthentication };
 # leanpub-end-insert
-~~~~~~~~
+~~~~~~~
 
 The App component becomes a function component again, without the additional business logic for the authenticated user. Now, it uses the higher-order component to make the authenticated user available for all other components below of the App component:
 
 {title="src/components/App/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 # leanpub-start-insert
 import React from 'react';
 # leanpub-end-insert
@@ -1217,7 +1217,7 @@ const App = () => (
 # leanpub-start-insert
 export default withAuthentication(App);
 # leanpub-end-insert
-~~~~~~~~
+~~~~~~~
 
 Start the application and verify that it still works. You didn't change any behavior in this section, but shielded away the more complex logic into a higher-order component. Also, the application now passes the authenticated user implicitly via React's Context, rather than explicitly through the component tree using props.
 

@@ -5,7 +5,7 @@ Since we are building a larger application in the following sections, it would b
 The application should have multiple routes. For instance, a user should be able to visit a public landing page, and also use sign up and sign in pages to enter the application as an authenticated user. If a user is authenticated, it is possible to visit protected pages like account or admin pages whereas the latter is only accessible by authenticated users with an admin role. You can consolidate all the routes of your application in a well-defined *src/constants/routes.js* constants file:
 
 {title="src/constants/routes.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 export const LANDING = '/';
 export const SIGN_UP = '/signup';
 export const SIGN_IN = '/signin';
@@ -13,7 +13,7 @@ export const HOME = '/home';
 export const ACCOUNT = '/account';
 export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
-~~~~~~~~
+~~~~~~~
 
 Each route represents a page in your application. For instance, the sign up page should be reachable in development mode via *http://localhost:3000/signup* and in production mode via *http://yourdomain/signup*.
 
@@ -36,16 +36,16 @@ We've completed the routes for this React with Firebase application. I find it e
 Now, all these routes need to be accessible to the user. First, you need a router for your web application, which is responsible to map routes to React components. React Router is a popular package to enable routing, so install it on the command line:
 
 {title="Command Line",lang="json"}
-~~~~~~~~
+~~~~~~~
 npm install react-router-dom
-~~~~~~~~
+~~~~~~~
 
 The best way to start is implementing a Navigation component that will be used in the App component. The App component is the perfect place to render the Navigation component, because it always renders the Navigation component but replaces the other components (pages) based on the routes. Basically, the App component is the container where all your fixed components are going (e.g. navigation bar, side bar, footer), but also your components that are displayed depending on the route in the URL (e.g. account page, login page, password forget page).
 
 First, the App component will use the Navigation component that is not implemented yet. Also, it uses the Router component provided by React Router. The Router makes it possible to navigate from URL-to-URL on the client-side application without another request to a web server for every route change. The application is only fetched once from a web server, after which all routing is done on the client-side with React Router.
 
 {title="src/components/App/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 # leanpub-start-insert
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -64,12 +64,12 @@ const App = () => (
 );
 
 export default App;
-~~~~~~~~
+~~~~~~~
 
 Second, implement the Navigation component. It uses the Link component of React Router to enable navigation to different routes. These routes were defined previously in your constants file. Let's import all of them and give every Link component a specific route.
 
 {title="src/components/Navigation/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 # leanpub-start-insert
 import { Link } from 'react-router-dom';
@@ -104,12 +104,12 @@ const Navigation = () => (
 );
 
 export default Navigation;
-~~~~~~~~
+~~~~~~~
 
 Now, run your application again and verify that the links show up in your browser, and that once you click a link, the URL changes. Notice that even though the URL changes, the displayed content doesn't change. The navigation is only there to enable navigation through your application. But no one knows what to render on each route. That's where the *route to component* mapping comes in. In your App component, you can specify which components should show up according to corresponding routes with the help of the Route component from React Router.
 
 {title="src/components/App/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -156,7 +156,7 @@ const App = () => (
 );
 
 export default App;
-~~~~~~~~
+~~~~~~~
 
 If a route matches a path prop, the respective component will be displayed; thus, all the page components in the App component are exchangeable by changing the route, but the Navigation component stays fixed independently of any route changes. This is how you enable a static frame with various components (e.g. Navigation) around your dynamic pages driven by routes. It's all made possible by [React's powerful composition](https://www.robinwieruch.de/react-component-composition/).
 

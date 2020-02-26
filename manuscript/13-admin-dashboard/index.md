@@ -5,7 +5,7 @@ Before we dive deeper into Firebase's realtime database and the domain-related b
 In this section, we'll implement more specific routing for the admin page. So far, this page only shows a list of users, retrieved from the Firebase realtime database. Basically, it is the overview of our users. However, a list of users alone doesn't help that much, and a detail page would be much more useful. Then, it would be possible to trigger further actions for the user on the detail page instead of the overview page. To start, define a new child route:
 
 {title="src/constants/routes.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 export const LANDING = '/';
 export const SIGN_UP = '/signup';
 export const SIGN_IN = '/signin';
@@ -16,14 +16,14 @@ export const ADMIN = '/admin';
 # leanpub-start-insert
 export const ADMIN_DETAILS = '/admin/:id';
 # leanpub-end-insert
-~~~~~~~~
+~~~~~~~
 
 The `:id` is a placeholder for a user identifier to be used later. If you want to be more specific, you could have used `/admin/users/:id` as well. Perhaps later you'll want to manage other entities on this admin page. For instance, the admin page could have a list of users and a list of books written by them, where it would make sense to have detail pages for users (`/admin/users/:userId`) and books (`/admin/books/:bookId`).
 
 Next, extract all the functionality from the AdminPage component. You will lift this business logic down to another component in the next step. In this step, introduce two sub routes for the admin page and match the UserList and UserItem components to it. The former component is already there, the latter component will be implemented soon.
 
 {title="src/components/Admin/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React, { Component } from 'react';
 # leanpub-start-insert
 import { Switch, Route, Link } from 'react-router-dom';
@@ -54,12 +54,12 @@ const AdminPage = () => (
 # leanpub-start-insert
 );
 # leanpub-end-insert
-~~~~~~~~
+~~~~~~~
 
 The UserList component receives all the business logic that was in the AdminPage. Also, it receives the `Base` suffix because we enhance it in the next step with a higher-order component to make the Firebase instance available.
 
 {title="src/components/Admin/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 # leanpub-start-insert
 class UserListBase extends Component {
   constructor(props) {
@@ -98,12 +98,12 @@ class UserListBase extends Component {
   }
 }
 # leanpub-end-insert
-~~~~~~~~
+~~~~~~~
 
 Further, the UserList component renders a Link component from the React Router package, which is used to navigate users from the user list (overview) to the user item (detail) route. The mapping for the route and the component was completed in the AdminPage component.
 
 {title="src/components/Admin/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 class UserListBase extends Component {
   ...
 
@@ -148,12 +148,12 @@ class UserListBase extends Component {
   }
 # leanpub-end-insert
 }
-~~~~~~~~
+~~~~~~~
 
 Remember, the UserList receives access to the Firebase instance, and the AdminPage doesn't need it anymore.
 
 {title="src/components/Admin/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 ...
 
 const condition = authUser =>
@@ -167,12 +167,12 @@ export default compose(
   withEmailVerification,
   withAuthorization(condition),
 )(AdminPage);
-~~~~~~~~
+~~~~~~~
 
 Last but not least, render a basic UserItem component.
 
 {title="src/components/Admin/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 ...
 
 # leanpub-start-insert
@@ -182,12 +182,12 @@ const UserItem = ({ match }) => (
   </div>
 );
 # leanpub-end-insert
-~~~~~~~~
+~~~~~~~
 
 You should be able to navigate from the user list (overview) to the user item (detail) component on the admin page now. We are fetching the user list on the admin page, without specific user data for a single user for the UserItem component on the detail perspective. The identifier for the user is available from the browser's URL through the React Router. You can extract it from the component's props to fetch a user from Firebase's realtime database:
 
 {title="src/components/Admin/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 # leanpub-start-insert
 class UserItemBase extends Component {
   constructor(props) {
@@ -221,12 +221,12 @@ class UserItemBase extends Component {
   }
 }
 # leanpub-end-insert
-~~~~~~~~
+~~~~~~~
 
 Don't forget to make Firebase accessible in the props of the UserItem component again via our higher-order component:
 
 {title="src/components/Admin/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 ...
 
 const UserList = withFirebase(UserListBase);
@@ -235,12 +235,12 @@ const UserItem = withFirebase(UserItemBase);
 # leanpub-end-insert
 
 ...
-~~~~~~~~
+~~~~~~~
 
 Last but not least, render again the user information. This time it's not a whole list of users, but only a single user entity:
 
 {title="src/components/Admin/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 class UserItemBase extends Component {
   ...
 
@@ -271,12 +271,12 @@ class UserItemBase extends Component {
 # leanpub-end-insert
   }
 }
-~~~~~~~~
+~~~~~~~
 
 When you navigate to a user detail perspective, you can see the id from the props is rendered immediately, because it's available from React Router to fetch user details from the Firebase database. However, since you already have the information about the user in the UserList component that links to your UserItem component, you can pass this information through React Router's Link:
 
 {title="src/components/Admin/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 class UserListBase extends Component {
   ...
 
@@ -310,12 +310,12 @@ class UserListBase extends Component {
     );
   }
 }
-~~~~~~~~
+~~~~~~~
 
 Then use it in the UserItem component as default local state:
 
 {title="src/components/Admin/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 class UserItemBase extends Component {
   constructor(props) {
     super(props);
@@ -350,12 +350,12 @@ class UserItemBase extends Component {
 
   ...
 }
-~~~~~~~~
+~~~~~~~
 
 If users navigate from the UserList to the UserItem component, they should arrive immediately. If they enter the URL by hand in the browser or with a Link component that doesn't pass them to the UserItem component, the user needs to be fetched from the Firebase database. Since you have a page for each individual user on your admin dashboard now, you can add more specific actions. For instance, sometimes a user can't login and isn't sure how to proceed, which is the perfect time to send a reset password email to them as admin. Let's add a button to send a password reset email to a user.
 
 {title="src/components/Admin/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 class UserItemBase extends Component {
   ...
 
@@ -395,7 +395,7 @@ class UserItemBase extends Component {
     );
   }
 }
-~~~~~~~~
+~~~~~~~
 
 Note: If you want to dig deeper into deleting users from Firebase's authentication, how to resend verification emails, or how to change email addresses, study Firebase's Admin SDK.
 

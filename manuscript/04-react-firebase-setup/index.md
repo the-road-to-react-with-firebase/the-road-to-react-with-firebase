@@ -8,30 +8,30 @@ You created a Firebase class, but you are not using it in your React application
 An alternative way is to use [React's Context API](https://www.robinwieruch.de/react-context-api/) to provide a Firebase instance once at the top-level of your component hierarchy. Create a new *src/components/Firebase/context.js* file in your Firebase module and provide the following implementation details:
 
 {title="src/components/Firebase/context.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 
 const FirebaseContext = React.createContext(null);
 
 export default FirebaseContext;
-~~~~~~~~
+~~~~~~~
 
 The `createContext()` function essentially creates two components. The `FirebaseContext.Provider` component is used to provide a Firebase instance once at the top-level of your React component tree, which we will do in this section; and the `FirebaseContext.Consumer` component is used to retrieve the Firebase instance if it is needed in the React component. For a well-encapsulated Firebase module, we'll define a *index.js* file in our Firebase folder that exports all necessary functionalities (Firebase class, Firebase context for Consumer and Provider components):
 
 {title="src/components/Firebase/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import FirebaseContext from './context';
 import Firebase from './firebase';
 
 export default Firebase;
 
 export { FirebaseContext };
-~~~~~~~~
+~~~~~~~
 
 The Firebase Context from the Firebase module (folder) is used to provide a Firebase instance to your entire application in the *src/index.js* file. You only need to create the Firebase instance with the Firebase class and pass it as value prop to the React's Context:
 
 {title="src/index.js",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -55,12 +55,12 @@ ReactDOM.render(
 );
 
 serviceWorker.unregister();
-~~~~~~~~
+~~~~~~~
 
 Doing it this way, we can be assured that Firebase is only instantiated once and that it is injected via React's Context API to React's component tree. Now, every component that is interested in using Firebase has access to the Firebase instance with a `FirebaseContext.Consumer` component. Even though you will see it first-hand later for this application, the following code snippet shows how it would work:
 
 {title="Code Playground",lang="javascript"}
-~~~~~~~~
+~~~~~~~
 import React from 'react';
 
 import  { FirebaseContext } from '../Firebase';
@@ -74,7 +74,7 @@ const SomeComponent = () => (
 );
 
 export default SomeComponent;
-~~~~~~~~
+~~~~~~~
 
 Firebase and React are now connected, the fundamental step to make the layers communicate with each other. Next, we will implement the interface for the Firebase class on our side to communicate with the Firebase API.
 
